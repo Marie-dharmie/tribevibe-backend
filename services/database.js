@@ -1,25 +1,19 @@
-require('dotenv').config();
+const mysql = require("mysql2");
 
-const mysql = require('mysql2');
-
-const config = mysql.createConnection({
-    host: process.env.DB_HOST,
-    user: process.env.DB_USERNAME,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME
+const db = mysql.createConnection({
+    host: process.env.MYSQLHOST,
+    user: process.env.MYSQLUSER,
+    password: process.env.MYSQLPASSWORD,
+    database: process.env.MYSQLDATABASE,
+    port: process.env.MYSQLPORT
 });
 
-config.connect(function (err) {
-
+db.connect((err) => {
     if (err) {
-
-        console.log('DATABASE CONNECTION ERROR:', err);
-        return;
-
+        console.error("Database connection failed:", err);
+    } else {
+        console.log("Connected to Railway MySQL");
     }
-
-    console.log('Connected to HelloHoly database');
-
 });
 
-module.exports = { config };
+module.exports = db;
