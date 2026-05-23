@@ -10,7 +10,7 @@ const {
 
 const express = require('express');
 // MySQL connection (configured in /services/database.js)
-const db = require('./services/database').config;
+const db = require('./services/database');
 // CORS allows backend to accept requests from your frontend (different port)
 const cors = require('cors');
 // Path for file/directory manipulation (used to serve static files)
@@ -45,6 +45,7 @@ const upload = require('./middlewares/upload');
 // Define port (3001 for backend, 5177 for frontend)
 const port = 3001;
 const app = express();
+app.set('trust proxy', 1);
 const {
     checkAccountStatus
 } = require('./middlewares/accountStatus');
@@ -62,7 +63,11 @@ app.use('/uploads', express.static('uploads'));
 
 // Allow requests from any frontend, send cookies, allow credentials
 app.use(cors({
-    origin: true,
+    origin: [
+        "http://localhost:5173",
+        "https://tribevibe.eu",
+        "https://www.tribevibe.eu"
+    ],
     credentials: true
 }));
 
