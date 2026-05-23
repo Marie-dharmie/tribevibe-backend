@@ -1,4 +1,4 @@
-const db = require('../services/database').config;
+const db = require('../services/database')
 
 // Get all events
 function getAllEvents(callback) {

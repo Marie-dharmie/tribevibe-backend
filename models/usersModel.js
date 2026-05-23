@@ -1,4 +1,4 @@
-const db = require('../services/database').config;
+const db = require('../services/database')
 const { hashPassword } = require('../services/authentication');
 
 // Get all users

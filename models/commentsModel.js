@@ -1,5 +1,4 @@
-const db = require('../services/database').config;
-
+const db = require('../services/database')
 // Get all comments for a specific post
 function getCommentsByPost(postId, callback) {
 

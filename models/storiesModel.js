@@ -1,4 +1,4 @@
-const db = require('../services/database').config;
+const db = require('../services/database')
 
 // Create story
 function createStory(storyData, callback) {

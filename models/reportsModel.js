@@ -1,4 +1,4 @@
-const db = require('../services/database').config;
+const db = require('../services/database')
 
 // Create report
 function createReport(reportData, callback) {

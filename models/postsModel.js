@@ -1,4 +1,4 @@
-const db = require('../services/database').config;
+const db = require('../services/database')
 
 // Create a new post with multiple images + videos
 function createPost(postData, callback) {

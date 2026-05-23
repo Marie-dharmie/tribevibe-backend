@@ -1,4 +1,4 @@
-const db = require('../services/database').config;
+const db = require('../services/database')
 
 // Add a like to a post for a specific user
 // Uses INSERT IGNORE to prevent duplicate likes by the same user on the same post

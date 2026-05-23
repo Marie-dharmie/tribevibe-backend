@@ -1,4 +1,4 @@
-const db = require('../services/database').config;
+const db = require('../services/database')
 
 // Get notifications for a user
 function getNotifications(userId, callback) {
