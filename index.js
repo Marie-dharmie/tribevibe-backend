@@ -62,7 +62,11 @@ app.use(cors({
 }));
 // Parse incoming JSON in all requests
 app.use(express.json());
-app.use(helmet());
+app.use(
+    helmet({
+        crossOriginResourcePolicy: false,
+    })
+);
 app.use(limiter);
 // Parse cookies for auth
 app.use(cookieParser());
