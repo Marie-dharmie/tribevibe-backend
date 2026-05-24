@@ -373,6 +373,7 @@ app.get('/api/posts/:postId/likers', postLikesController.getLikers); // who like
 
 // Serve static files from frontend (built React app)
 // E.g., if someone requests /, /calendar, /vibe-feed, this serves index.html, letting React handle routing.
+/*
 app.use(express.static(path.join(__dirname, '../frontend/dist')));
 
 // For all remaining requests (not matching above), send the main index.html
@@ -380,6 +381,7 @@ app.use(express.static(path.join(__dirname, '../frontend/dist')));
 app.use((req, res) => {
     res.sendFile(path.join(__dirname, '../frontend/dist', 'index.html'));
 });
+*/
 
 // ---------------------------------------------------------------
 //                   START THE SERVER
