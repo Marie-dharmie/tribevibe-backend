@@ -67,7 +67,7 @@ app.use(
         crossOriginResourcePolicy: false,
     })
 );
-app.use(limiter);
+/*app.use(limiter);*/
 // Parse cookies for auth
 app.use(cookieParser());
 // Make files in /uploads accessible at http://localhost:3001/uploads/...
