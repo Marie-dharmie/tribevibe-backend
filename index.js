@@ -51,16 +51,6 @@ const {
 } = require('./middlewares/accountStatus');
 
 // ---- GLOBAL MIDDLEWARE ----
-
-// Parse incoming JSON in all requests
-app.use(express.json());
-app.use(helmet());
-app.use(limiter);
-// Parse cookies for auth
-app.use(cookieParser());
-// Make files in /uploads accessible at http://localhost:3001/uploads/...
-app.use('/uploads', express.static('uploads'));
-
 // Allow requests from any frontend, send cookies, allow credentials
 app.use(cors({
     origin: [
@@ -70,6 +60,16 @@ app.use(cors({
     ],
     credentials: true
 }));
+// Parse incoming JSON in all requests
+app.use(express.json());
+app.use(helmet());
+app.use(limiter);
+// Parse cookies for auth
+app.use(cookieParser());
+// Make files in /uploads accessible at http://localhost:3001/uploads/...
+app.use('/uploads', express.static('uploads'));
+
+
 
 // ---------------------------------------------------------------
 //                       ROUTE DEFINITIONS
